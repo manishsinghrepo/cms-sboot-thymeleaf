@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="htt://www.thymeleaf.org">
+<html>
+<head>
+    <title>CustomerRegistration Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    	<link rel="stylesheet" type="text/css"    th:href="@{/css/font.css}"/>
+</head>
+<body >
+<div><p class="funny">Click hereto Register new Customer <a href="/cms/showcustomerForm">Registration form</a></p>
+<br/>
+
+</div>
+<div align="center">
+<table border=1>
+    <thead>
+<tr><th>Customer ID:</th>
+    <th>Customer name:</th>
+    <th>Customer State:</th>
+<th/>
+<th/>
+</tr>
+    </thead>
+<tbody>
+<!--<tr th:each="instance : ${customerMap}">
+<td th:text="${instance.key}">keyvalue</td>
+<td th:text="${instance.value.firstName}">num</td>
+</tr>-->
+
+<tr th:each="entry : ${customerMap}">
+        <td th:text="${entry.key}"/></td>
+        <td th:text="${entry.value.firstName}"></td>
+        <td th:text="${entry.value.state}"/>
+       <!-- <td> <a th:href="/cms/modifyCustomer?id=${entry.key}">Modify</a></td>
+        <td> <a th:href="/cms/deleteCustomer?id=${entry.key}">Delete</a></td>
+-->
+        </tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>
